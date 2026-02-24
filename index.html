@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="facebook-domain-verification" content="wgl22dgdkpvnp9u88fl696sp7fbu4m" />
+
     <title>IronPips — AI-Powered Business Automation</title>
     <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <style>
@@ -19,6 +20,21 @@
             --accent: #FF6B35;
         }
 
+        /* NEW: Styles for the visible verification bar */
+        .verification-bar {
+            background: #000;
+            color: #ffffff; /* White color */
+            text-align: center;
+            padding: 8px;
+            font-size: 12px;
+            font-family: monospace;
+            border-bottom: 1px solid var(--gold);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 200;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
@@ -26,8 +42,10 @@
             color: var(--white);
             font-family: 'DM Sans', sans-serif;
             overflow-x: hidden;
+            padding-top: 35px; /* Added space for the new bar */
         }
 
+        /* ... (rest of your existing CSS remains the same) ... */
         body::before {
             content: '';
             position: fixed;
@@ -40,7 +58,8 @@
 
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 35px; /* Pushed down to start after the verification bar */
+            left: 0; right: 0;
             z-index: 100;
             padding: 20px 60px;
             display: flex;
@@ -478,7 +497,7 @@
         }
 
         @media (max-width: 900px) {
-            nav { padding: 16px 24px; }
+            nav { padding: 16px 24px; top: 35px; }
             nav ul { display: none; }
             .hero { padding: 100px 24px 60px; }
             .hero-stats { display: none; }
@@ -490,6 +509,10 @@
     </style>
 </head>
 <body>
+
+<div class="verification-bar">
+    facebook-domain-verification=wgl22dgdkpvnp9u88fl696sp7fbu4m
+</div>
 
 <nav>
     <div class="logo">Iron<span>Pips</span></div>
